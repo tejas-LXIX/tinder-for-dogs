@@ -42,7 +42,7 @@ h2{
 }
 /*Title Image*/
 .title-image{
-    margin:0 20%;
+    margin:0 5%;
     width:60%;
     transform: rotate(25deg);
     position:absolute;
