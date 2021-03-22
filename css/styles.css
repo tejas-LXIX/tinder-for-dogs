@@ -45,14 +45,16 @@ h2{
     margin:0 5%;
     width:60%;
     transform: rotate(25deg);
-    position:absolute;
+    position:absolute;  /*if you remove this,then it will occupy the whole space that it has, and therefore the z-index will not work. Absolute rakhne ke wajeh se hi other elements are able to take up its space. This is how the features section can come on top of the image*/
 }
 /*Features*/
 #features{
     padding:7% 15%;
-    background-color: white;
-    position:relative;  /*not absolute,so as to keep it in the regular flow*/
-    z-index:1;  /*will come on top of the title-image*/
+    background-color: white;    /*if you dont do this,then the features section will not be able to obscure the image. toh z-index=1 karne ke baad bhi image dikhega*/
+    position:relative;  /*not absolute,so as to keep it in the regular flow. ABSOLUTE KAROGE TOH THIS ELEMENT WILL BE TAKEN OUT OF THE HTML FLOW. USKE WAJEH SE TESTIMONIALS WILL OCCUPY ITS SPACE,AND THEREFORE IT WILL GET OBSCURED.TRY KARKE DEKHO!*/
+    z-index:1;  /*will come on top of the title-image. -1 karte toh it would come behind the image, i.e the image would come on top of the features section and occupy some of its space*/
+    /*AGAR YE Z-INDEX NAHI BHI RAKHOGE,tab bhi features will come on top of the image. This is because it comes later in the html flow so by default,it will be above the title-image.*/
+    /*WATCH VIDEO 83 OF ANGELA*/
 }
 .features-heading{
     font-size: 1.5rem;
